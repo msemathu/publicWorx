@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
+        <event-block sid="1319717009781606">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4155457923437079" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="6625366427817368" type="Player" />
+            </actions>
+        </event-block>
+        <comment>Allow WASD as alternate controls to arrow keys.</comment>
+        <event-block sid="7689116546168857">
+            <conditions>
+                <condition id="2" name="Key is down" sid="6246550433145842" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4363631503303117" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3066221800264145">
+            <conditions>
+                <condition id="2" name="Key is down" sid="222498431647697" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="3110576152660351" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9581752955853">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9803058383833624" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="6105678955355457" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="2346835122322908">
+            <conditions>
+                <condition id="2" name="Key is down" sid="6709883514583215" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="1912082067148275" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+        <event-block any="1" sid="1930663880039232">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4403247282779238" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="7500731532315628" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="3970521488254095" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="6" name="Set speed" sid="2290990742565319" type="Player">
+                    <param id="0" name="Speed">100</param>
+                </action>
+                <action id="4" name="Set animation" sid="3335723791327628" type="Player">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="9191533410768938">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3751940962425816" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="9351604339454262" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="9865481339000181" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="6" name="Set speed" sid="5853907279293364" type="Player">
+                    <param id="0" name="Speed">100</param>
+                </action>
+                <action id="4" name="Set animation" sid="1690120821396507" type="Player">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block sid="1154767037616756">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="5080895529269146" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="4443474549740356" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="5758492335049427" title="Touch" />
+        <event-block sid="6259462170308208">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8255023021266032" type="Touch">
+                    <param id="0" name="Object">LBtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="6405698125331394" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="6" name="Set speed" sid="1004607100110267" type="Player">
+                    <param id="0" name="Speed">60</param>
+                </action>
+                <action id="4" name="Set animation" sid="8448617919686826" type="Player">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6236779747207294">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2663883892326878" type="Touch">
+                    <param id="0" name="Object">Rbtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="2020474871098332" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="6" name="Set speed" sid="7606026551720628" type="Player">
+                    <param id="0" name="Speed">60</param>
+                </action>
+                <action id="4" name="Set animation" sid="6925443691317917" type="Player">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4456750790192318">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1744083826865177" type="Touch">
+                    <param id="0" name="Object">UpBtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4966010002237181" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="4" name="Set animation" sid="1073553313133046" type="Player">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="785663741204104">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="5939308193229166" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7666275529945246" type="Player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
