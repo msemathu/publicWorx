@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1382387567
+#1382389539
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -16,6 +16,8 @@ images\sprite-sheet0.png
 images\sprite2-sheet0.png
 images\sprite3-sheet0.png
 images\life-sheet0.png
+media\jump_01.m4a
+media\jump_01.ogg
 icon-16.png
 icon-32.png
 icon-114.png
